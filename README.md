@@ -24,7 +24,9 @@ Exemplo:
 
 5 - Importar o arquivo de Blog.postman_collection.json do postman ou Insominia para uso do endpoints. 
 
-
+***
+Executar o save de autor, em segunda pegar o json gerado e adicionar na quesição de save da postagem. 
+***
 
 
 ### Obs. 
