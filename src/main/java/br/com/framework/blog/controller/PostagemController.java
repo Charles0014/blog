@@ -47,9 +47,7 @@ public class PostagemController {
 
     @DeleteMapping("/delete")
     public ResponseEntity<List<Postagem>>delete(@RequestBody Postagem postagem) {
-        postagemRepository.delete(postagem);
-        log.info("Apagado com sucesso");
-        return ResponseEntity.ok(postagemRepository.findAll());
+        return ResponseEntity.ok(postagemService.delete(postagem));
     }
 
 }
