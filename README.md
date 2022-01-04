@@ -1,5 +1,17 @@
 ## Blog BeckEnd  
 
+## Technologies used
+- Java
+- Spring Boot
+- Spring MVC
+- Spring Data JPA
+- Spring Security
+- Hibernate
+- JSON
+- POSTGRES
+- JWT (Json Web Token)
+
+
 1 - Executar o docker compose -- será criado o banco e adicionado os dados. 
 
 2 - Rodar o Script SQL no banco  
