@@ -3,6 +3,7 @@ package br.com.framework.blog.controller;
 import br.com.framework.blog.model.Usuario;
 import br.com.framework.blog.repository.UsuarioRepository;
 import br.com.framework.blog.service.UsuarioService;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/blog/usuario")
+@CrossOrigin(origins = "*")
 @Slf4j
 public class UsuarioController {
 

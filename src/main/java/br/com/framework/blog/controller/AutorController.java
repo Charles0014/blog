@@ -2,6 +2,7 @@ package br.com.framework.blog.controller;
 
 import br.com.framework.blog.model.Autor;
 import br.com.framework.blog.repository.AutorRepository;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/blog/autor/")
+@CrossOrigin(origins = "*")
 @Slf4j
 public class AutorController {
 

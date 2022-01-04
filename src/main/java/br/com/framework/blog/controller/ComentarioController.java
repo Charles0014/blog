@@ -2,11 +2,13 @@ package br.com.framework.blog.controller;
 
 import br.com.framework.blog.model.Postagem;
 import br.com.framework.blog.service.ComentarioService;
+import io.swagger.annotations.Api;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/blog/comentario/")
+@CrossOrigin(origins = "*")
 public class ComentarioController {
 
     private final ComentarioService comentarioService;

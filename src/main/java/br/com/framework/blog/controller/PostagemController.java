@@ -3,6 +3,7 @@ package br.com.framework.blog.controller;
 import br.com.framework.blog.model.Postagem;
 import br.com.framework.blog.repository.PostagemRepository;
 import br.com.framework.blog.service.PostagemService;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/blog/postagem")
+@CrossOrigin(origins = "*")
 @Slf4j
 public class PostagemController {
 
