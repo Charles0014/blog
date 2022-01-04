@@ -41,6 +41,7 @@ public class Postagem {
     @Column(name = "c_text", columnDefinition = "TEXT")
     private String conteudo;
 
+    @OrderBy("data_criacao")
     @OneToMany(mappedBy = "postagem", cascade = CascadeType.ALL)
     private List<Comentario> comentarios = new ArrayList<>();
 
