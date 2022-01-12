@@ -14,10 +14,12 @@
 
 1 - Executar o docker compose -- será criado o banco e adicionado os dados.
 
+* Caso o docker composer não subir deve ser apagado a pasta pgdata
+
 2 - Rodar o Script SQL no banco  
 * localhost:5432/blog * user= postgres * password=framework
 
-     "start.sql"
+INSERT INTO public.tb_usuario VALUES (68, 'Admin@dev', '$2a$10$EoVHycYU/6r.7LhQIRVIouPiNqXodxtO45QAGHQcMIa4C1pqivh1O');
 
 3 - executar a aplicação
 
