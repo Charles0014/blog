@@ -22,12 +22,12 @@ public class UsuarioService {
         this.encoder = encoder;
     }
 
-    public ResponseEntity<Boolean> validPassword(@RequestParam String login, @RequestParam String password){
+    public ResponseEntity<Boolean> validPassword(@RequestParam String login, @RequestParam String password) {
         Optional<Usuario> usuario = usuarioRepository.findByLogin(login);
-        if(usuario.isEmpty()){
+        if (usuario.isEmpty()) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(false);
         }
-        var valid = encoder.matches(password,usuario.get().getPassword());
+        var valid = encoder.matches(password, usuario.get().getPassword());
         HttpStatus status = (valid) ? HttpStatus.OK : HttpStatus.UNAUTHORIZED;
         return ResponseEntity.status(status).body(valid);
     }

@@ -3,7 +3,6 @@ package br.com.framework.blog.controller;
 import br.com.framework.blog.model.Usuario;
 import br.com.framework.blog.repository.UsuarioRepository;
 import br.com.framework.blog.service.UsuarioService;
-import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -30,24 +29,24 @@ public class UsuarioController {
     }
 
     @GetMapping("/findAll")
-    public ResponseEntity<List<Usuario>> findAll(){
+    public ResponseEntity<List<Usuario>> findAll() {
         return ResponseEntity.ok(usuarioRepository.findAll());
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Usuario> save(@RequestBody Usuario usuario){
+    public ResponseEntity<Usuario> save(@RequestBody Usuario usuario) {
         usuario.setPassword(encoder.encode(usuario.getPassword()));
         return ResponseEntity.ok(usuarioRepository.save(usuario));
     }
 
     @GetMapping("/valid")
-    public ResponseEntity<Boolean> validPassword(@RequestParam String login, @RequestParam String password){
-       try {
-          return usuarioService.validPassword(login,password);
-       }catch (Exception e){
-           log.info("" , e);
-           return null;
-       }
+    public ResponseEntity<Boolean> validPassword(@RequestParam String login, @RequestParam String password) {
+        try {
+            return usuarioService.validPassword(login, password);
+        } catch (Exception e) {
+            log.info("", e);
+            return null;
+        }
 
     }
 
