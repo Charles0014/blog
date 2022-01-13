@@ -50,7 +50,7 @@ public class ComentarioService {
     }
 
 
-    public Postagem updateComentario(long idPostagem, long idComentario, String updateComentatio){
+    public Postagem updateComentario(long idPostagem, long idComentario, String updateComentatio) {
         Postagem postagem = postagemRepository.findById(idPostagem);
         Comentario comentario = comentarioRepository.findById(idComentario);
         comentario.setComentario(updateComentatio);
@@ -59,8 +59,8 @@ public class ComentarioService {
         return postagemRepository.save(postagem);
     }
 
-    public Postagem deleteComentario(long idPostagem,long idComentario){
-        try{
+    public Postagem deleteComentario(long idPostagem, long idComentario) {
+        try {
             Postagem postagem = postagemRepository.findById(idPostagem);
             Comentario comentario = comentarioRepository.findById(idComentario);
             comentarioRepository.delete(comentario);
@@ -68,7 +68,7 @@ public class ComentarioService {
             log.info("Apagado com sucesso");
             return postagemRepository.save(postagem);
 
-        }catch (Exception e ){
+        } catch (Exception e) {
             log.info("Não foi possível apagar comentário ");
             return null;
         }

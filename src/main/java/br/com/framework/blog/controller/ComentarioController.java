@@ -2,7 +2,6 @@ package br.com.framework.blog.controller;
 
 import br.com.framework.blog.model.Postagem;
 import br.com.framework.blog.service.ComentarioService;
-import io.swagger.annotations.Api;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +27,7 @@ public class ComentarioController {
     }
 
     @DeleteMapping("delete/{idPost}/{idComentario}")
-    public ResponseEntity<Postagem> delete(@PathVariable(value = "idPost") long idPost, @PathVariable(value = "idComentario") long idComentario){
+    public ResponseEntity<Postagem> delete(@PathVariable(value = "idPost") long idPost, @PathVariable(value = "idComentario") long idComentario) {
         return ResponseEntity.ok(comentarioService.deleteComentario(idPost, idComentario));
     }
 

@@ -13,6 +13,9 @@ target/
 .springBeans
 .sts4-cache
 
+### PgData
+pgdata/**
+
 ### IntelliJ IDEA ###
 .idea
 *.iws

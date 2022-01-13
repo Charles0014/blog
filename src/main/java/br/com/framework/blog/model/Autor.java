@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Entity
 @Table(name = "TB_AUTOR")
 @Data
-public class Autor  {
+public class Autor {
 
     private static final long SerialVersionUID = 1L;
 
@@ -23,5 +23,5 @@ public class Autor  {
     @NotBlank
     @JsonIgnore
     private String email;
-    
+
 }

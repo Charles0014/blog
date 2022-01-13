@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "TB_COMENTARIO")
@@ -29,5 +30,7 @@ public class Comentario {
     @JoinColumn(name = "postagem_id")
     @ManyToOne
     private Postagem postagem;
+
+    private LocalDate dataCriacao;
 
 }

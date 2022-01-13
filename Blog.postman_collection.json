@@ -1,618 +1,618 @@
 {
-	"info": {
-		"_postman_id": "b7efd46d-39e2-4eac-91c4-cd40b09f5de4",
-		"name": "Blog",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "GetToken",
-			"item": [
-				{
-					"name": "token",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \"login\":\"Admin@dev\", \"password\":\"Dev@2022\" }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9005/login",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"login"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Postagem",
-			"item": [
-				{
-					"name": "findAll",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:9005/api/blog/postagem/findAll",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"postagem",
-								"findAll"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "save",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n{\r\n        \"titulo\": \"New Post Java Spring Boot\",\r\n        \"autor\": {\r\n            \"id\": 65,\r\n            \"nome\": \"Admin Developer\"\r\n        },\r\n        \"conteudo\": \"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero re also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9005/api/blog/postagem/save",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"postagem",
-								"save"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "findById",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:9005/api/blog/postagem/findById/12",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"postagem",
-								"findById",
-								"12"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{       \"id\": 127,\r\n        \"titulo\": \"Spring POSTGRES Post   ttt\",\r\n        \"autor\": {\r\n            \"id\": 65,\r\n            \"nome\": \"Admin Developer\"\r\n        },\r\n        \"conteudo\": \"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero re also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\"\r\n       , \"comentarios\": []\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9005/api/blog/postagem/update",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"postagem",
-								"update"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 124,\r\n    \"titulo\": \"Spring java Novo Post\",\r\n    \"autor\": {\r\n        \"id\": 65,\r\n        \"nome\": \"Admin Developer\"\r\n    },\r\n    \"dataCriacao\": null,\r\n    \"dataAtualizacao\": \"2022-01-02\",\r\n    \"conteudo\": \"Spring\",\r\n    \"comentarios\": []\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9005/api/blog/postagem/delete",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"postagem",
-								"delete"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Usuario",
-			"item": [
-				{
-					"name": "findAll",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:9005/api/blog/usuario/findAll",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"usuario",
-								"findAll"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "save",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n    {\r\n        \"login\": \"Admin@System\",\r\n        \"password\":\"System@123\"\r\n    }\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9005/api/blog/usuario/save",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"usuario",
-								"save"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Comentários",
-			"item": [
-				{
-					"name": "addComentario",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"comentario\":\"Acredito que o SpringBoot seja uma excelente ferramenta\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9005/api/blog/comentario/new/118/65/",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"comentario",
-								"new",
-								"118",
-								"65",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "deleteComentario",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "localhost:9005/api/blog/comentario/delete/12/113/",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"comentario",
-								"delete",
-								"12",
-								"113",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "updateComentário",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\r\n    \"comentario\":\"TESTESSSSSSSSSSS UPDATE\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9005/api/blog/comentario/update/12/113/",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"comentario",
-								"update",
-								"12",
-								"113",
-								""
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Autor",
-			"item": [
-				{
-					"name": "save",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMjIwNjd9.IKxqhGPu-WgSv--SDJMqmETz6DXIDrJ3vqKdHFV0NKIB1g-3p5PIV06ZUoZpTmd2tCnk2YxM-NQac3VrFZWOAA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nome\":\"Dev Cicle 2020\",\r\n    \"email\":\"devcicle@gmail.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9005/api/blog/autor/save",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"autor",
-								"save"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "findAll",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMjIwNjd9.IKxqhGPu-WgSv--SDJMqmETz6DXIDrJ3vqKdHFV0NKIB1g-3p5PIV06ZUoZpTmd2tCnk2YxM-NQac3VrFZWOAA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:9005/api/blog/autor/findAll",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"autor",
-								"findAll"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "findById",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:9005/api/blog/autor/findById/65",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"autor",
-								"findById",
-								"65"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 65,\r\n    \"nome\": \"Admin Developer\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9005/api/blog/autor/delete",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"autor",
-								"delete"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Admin Developer 1\",\r\n    \"email\": \"Dev@Gmail.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9005/api/blog/autor/update",
-							"host": [
-								"localhost"
-							],
-							"port": "9005",
-							"path": [
-								"api",
-								"blog",
-								"autor",
-								"update"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "b7efd46d-39e2-4eac-91c4-cd40b09f5de4",
+    "name": "Blog",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GetToken",
+      "item": [
+        {
+          "name": "token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"login\":\"Admin@dev\", \"password\":\"Dev@2022\" }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9005/login",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Postagem",
+      "item": [
+        {
+          "name": "findAll",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:9005/api/blog/postagem/findAll",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "postagem",
+                "findAll"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "save",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n{\r\n        \"titulo\": \"New Post Java Spring Boot\",\r\n        \"autor\": {\r\n            \"id\": 65,\r\n            \"nome\": \"Admin Developer\"\r\n        },\r\n        \"conteudo\": \"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero re also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9005/api/blog/postagem/save",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "postagem",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "findById",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:9005/api/blog/postagem/findById/12",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "postagem",
+                "findById",
+                "12"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{       \"id\": 127,\r\n        \"titulo\": \"Spring POSTGRES Post   ttt\",\r\n        \"autor\": {\r\n            \"id\": 65,\r\n            \"nome\": \"Admin Developer\"\r\n        },\r\n        \"conteudo\": \"The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero re also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.\"\r\n       , \"comentarios\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9005/api/blog/postagem/update",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "postagem",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 124,\r\n    \"titulo\": \"Spring java Novo Post\",\r\n    \"autor\": {\r\n        \"id\": 65,\r\n        \"nome\": \"Admin Developer\"\r\n    },\r\n    \"dataCriacao\": null,\r\n    \"dataAtualizacao\": \"2022-01-02\",\r\n    \"conteudo\": \"Spring\",\r\n    \"comentarios\": []\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9005/api/blog/postagem/delete",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "postagem",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Usuario",
+      "item": [
+        {
+          "name": "findAll",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:9005/api/blog/usuario/findAll",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "usuario",
+                "findAll"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "save",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n    {\r\n        \"login\": \"Admin@System\",\r\n        \"password\":\"System@123\"\r\n    }\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9005/api/blog/usuario/save",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "usuario",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comentários",
+      "item": [
+        {
+          "name": "addComentario",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"comentario\":\"Acredito que o SpringBoot seja uma excelente ferramenta\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9005/api/blog/comentario/new/118/65/",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "comentario",
+                "new",
+                "118",
+                "65",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deleteComentario",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:9005/api/blog/comentario/delete/12/113/",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "comentario",
+                "delete",
+                "12",
+                "113",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateComentário",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\r\n    \"comentario\":\"TESTESSSSSSSSSSS UPDATE\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9005/api/blog/comentario/update/12/113/",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "comentario",
+                "update",
+                "12",
+                "113",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Autor",
+      "item": [
+        {
+          "name": "save",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMjIwNjd9.IKxqhGPu-WgSv--SDJMqmETz6DXIDrJ3vqKdHFV0NKIB1g-3p5PIV06ZUoZpTmd2tCnk2YxM-NQac3VrFZWOAA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\":\"Dev Cicle 2020\",\r\n    \"email\":\"devcicle@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9005/api/blog/autor/save",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "autor",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "findAll",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMjIwNjd9.IKxqhGPu-WgSv--SDJMqmETz6DXIDrJ3vqKdHFV0NKIB1g-3p5PIV06ZUoZpTmd2tCnk2YxM-NQac3VrFZWOAA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:9005/api/blog/autor/findAll",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "autor",
+                "findAll"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "findById",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:9005/api/blog/autor/findById/65",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "autor",
+                "findById",
+                "65"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 65,\r\n    \"nome\": \"Admin Developer\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9005/api/blog/autor/delete",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "autor",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbkBkZXYiLCJleHAiOjE2NDEyMTYwODZ9.vBhkd1yCC07QZD5IBoRCDEleRRQtR_XRxcjsdgSpWnglQ_B9L_TnGGCZvXa36Ku_LXRpap0eIkOKQy8vYjGycA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nome\": \"Admin Developer 1\",\r\n    \"email\": \"Dev@Gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:9005/api/blog/autor/update",
+              "host": [
+                "localhost"
+              ],
+              "port": "9005",
+              "path": [
+                "api",
+                "blog",
+                "autor",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
 }
