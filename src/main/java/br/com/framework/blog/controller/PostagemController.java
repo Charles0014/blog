@@ -47,7 +47,7 @@ public class PostagemController {
     }
 
     @DeleteMapping("/delete")
-    public ResponseEntity<List<Postagem>> delete(@RequestBody Postagem postagem) {
+    public ResponseEntity<List<Postagem>> delete(@RequestBody Postagem postagem) throws Exception {
         return ResponseEntity.ok(postagemService.delete(postagem));
     }
 
