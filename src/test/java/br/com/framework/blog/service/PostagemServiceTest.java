@@ -3,7 +3,6 @@ package br.com.framework.blog.service;
 import br.com.framework.blog.model.Autor;
 import br.com.framework.blog.model.Postagem;
 import br.com.framework.blog.repository.PostagemRepository;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -16,21 +15,22 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
 class PostagemServiceTest {
 
     @Mock
-    private PostagemRepository postagemRepository;
-
+    PostagemRepository postagemRepository;
 
     @InjectMocks
     PostagemService postagemService;
 
 
     @Test
-    void whenUserDifferentPost_returnDeleteOk(){
+    void whenUserEqualsUserPost__ReturnSuccess(){
         List<Postagem> postagems = new ArrayList<>();
         Autor autor = new Autor();
         Postagem postagem = new Postagem();
@@ -42,11 +42,11 @@ class PostagemServiceTest {
         SecurityContextHolder.setContext(securityContext);
         postagems.add(postagem);
         when(postagemService.delete(postagem)).thenReturn(postagems);
-        Assertions.assertNotNull(postagemService.delete(postagem));
+        assertNotNull(postagemService.delete(postagem));
     }
 
     @Test
-    void whenUserDifferentPost_returnException(){
+    void whenUserDifferentUserPost_ReturnException(){
         Autor autor = new Autor();
         Postagem postagem = new Postagem();
         postagem.setId(12L);
@@ -56,7 +56,7 @@ class PostagemServiceTest {
         Mockito.when(securityContext.getAuthentication()).thenReturn(authentication);
         SecurityContextHolder.setContext(securityContext);
         when(postagemService.delete(postagem)).thenThrow(RuntimeException.class);
-        Assertions.assertThrows(RuntimeException.class,() -> postagemService.delete(postagem));
+        assertThrows(RuntimeException.class,() -> postagemService.delete(postagem));
     }
 
 
