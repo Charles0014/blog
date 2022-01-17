@@ -70,6 +70,19 @@ class ComentarioServiceTest {
         Assertions.assertNotNull(postagem.getComentarios());
     }
 
+    @Test
+    void whenDeleteCpmentsInPost_ReturnSuccess(){
+        Postagem postagem = new Postagem();
+        List<Comentario> comentarioList= new ArrayList<>();
+        Comentario comentario = new Comentario();
+        when(postagemRepository.findById(anyInt())).thenReturn(postagem);
+        when(comentarioRepository.findById(anyInt())).thenReturn(comentario);
+        comentarioList.add(comentario);
+        postagem.setComentarios(comentarioList);
+        comentarioRepository.delete(comentario);
+        comentarioList.remove(comentario);
+        postagem.setDataAtualizacao(LocalDate.now());
+        Assertions.assertTrue(comentarioList.isEmpty());
 
-
+    }
 }
